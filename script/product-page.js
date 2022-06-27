@@ -1,5 +1,7 @@
 const tableDOM = document.querySelector(".table-body");
 
+let cart = [];
+
 class Data {
   static async getProducts() {
     try {
@@ -12,7 +14,7 @@ class Data {
   }
 }
 class UI {
-  static displayProductsTable(products) {
+  static displayProducts(products) {
     let result = "";
     products.forEach((product) => {
       result += `
@@ -48,7 +50,7 @@ class UI {
         <td>
           <div class="compra">
             <b class="preco">R$ ${product.itemPreco}</b>
-            <button class="comprar" type="button">comprar</button>
+            <button class="comprar" type="button" data-id=${product.id}>comprar</button>
           </div>
         </td>
       </tr>
@@ -56,11 +58,65 @@ class UI {
     });
     tableDOM.innerHTML = result;
   }
+  static displayProductAddedAlert() {
+    const alert = document.createElement("div");
+    alert.className = "alert";
+    alert.innerHTML = `
+      <div class="alert-container">
+        <p>
+          Item adicionado ao carrinho
+        </p>
+        <p class="closeAlert"> x </p>
+      </div>
+    `;
+    document.body.appendChild(alert);
+  }
 }
+
+class Logic {
+  static btnComprarLogic() {
+    const buttons = [...document.querySelectorAll(".comprar")];
+    buttons.forEach((button) => {
+      const id = button.dataset.id;
+      button.addEventListener("click", (event) => {
+        button.disabled = true;
+        const cartItem = { ...Storage.getProduct(id) };
+        cart = [...cart, cartItem];
+        Storage.saveCart(cart);
+        UI.displayProductAddedAlert();
+      });
+    });
+  }
+}
+
+class Storage {
+  static saveProducts(products) {
+    localStorage.setItem("products", JSON.stringify(products));
+  }
+
+  static getProduct(id) {
+    let products = JSON.parse(localStorage.getItem("products"));
+    return products.find((product) => product.id == id);
+  }
+
+  static saveCart(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+
+  static getCart() {
+    return localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
+  }
+}
+
 const init = () => {
-  Data.getProducts().then((products) => {
-    UI.displayProductsTable(products);
-  });
+  Data.getProducts()
+    .then((products) => {
+      UI.displayProducts(products);
+      Storage.saveProducts(products);
+    })
+    .then(() => Logic.btnComprarLogic());
 };
 
 init();

@@ -437,3 +437,23 @@ footer b {
     width: 300px;
   }
 }
+
+.alert {
+  position: fixed;
+  color: white;
+  background-color: #fc7703;
+  padding: 10px 20px;
+  border-radius: 5px;
+  top: 30px;
+  left: -10px;
+  z-index: 5;
+}
+
+.alert-container {
+  display: flex;
+  gap: 10px;
+}
+.alert-container .closeAlert {
+  cursor: pointer;
+  opacity: 50%;
+}

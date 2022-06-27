@@ -390,9 +390,13 @@ footer b {
 }
 
 @media (max-width: 768px) {
+  .tabela-produtos,
+  .tabela-produtos thead,
+  th {
+    border: none;
+  }
   .tabela-produtos thead {
     display: none;
-    border: none;
   }
 
   .tabela-produtos,
@@ -403,7 +407,13 @@ footer b {
     min-width: 100%;
   }
 
+  .tabela-produtos tr,
+  .tabela-produtos td {
+    border: 1px solid var(--tertiary-color);
+  }
+
   .tabela-produtos tr {
+    border-radius: 5px;
     margin-bottom: 15px;
   }
   .tabela-produtos td {

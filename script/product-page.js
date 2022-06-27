@@ -48,7 +48,7 @@ class UI {
         <td>
           <div class="compra">
             <b class="preco">R$ ${product.itemPreco}</b>
-            <button class="comprar">comprar</button>
+            <button class="comprar" type="button">comprar</button>
           </div>
         </td>
       </tr>

@@ -1,0 +1,256 @@
+:root {
+  --primary-color: #062a3d;
+  --secondary-color: #05202d;
+  --tertiary-color: #083349;
+  --quaternary-color: #042435
+}
+
+main {
+  background-color: var(--secondary-color);
+  overflow-x: hidden;
+}
+
+.cabecalho {
+  padding: 100px 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-image: linear-gradient(to bottom left, rgba(0, 0, 255, 0.5), rgba(255, 0, 0, 0.5)), url(https://images3.alphacoders.com/169/169517.png);
+  background-size: cover;
+}
+
+.cabecalho button {
+  padding: 20px 70px;
+  width: fit-content;
+  background-image: linear-gradient(to left, orange, red);
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.cabecalho h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  width: 60%;
+  text-shadow: 2px 2px 2px black;
+}
+
+.cabecalho h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-shadow: 2px 2px 2px black;
+}
+
+.caracteristicas {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.caracteristicas ul {
+  list-style: none;
+}
+
+.caracteristicas ul li {
+  font-size: 1.1rem;
+  text-shadow: 2px 2px 2px black;
+  padding: 0 30px;
+}
+
+.caracteristicas ul:nth-child(1) {
+  border-right: 1px solid white;
+}
+
+.caracteristicas ul:nth-child(2) {
+  border-left: 1px solid white;
+}
+
+.jogos-select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 100px 0;
+  width: 100%;
+  background-color: var(--secondary-color);
+}
+
+.descricao {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+  gap: 10px;
+}
+
+.descricao h2 {
+  color: white;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px black;
+}
+
+.descricao h3 {
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  text-transform: uppercase;
+}
+
+.descricao h4 {
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  font-weight: normal;
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+.botao-jogos {
+  display: inline-block;
+  justify-content: space-between;
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.botao-jogos button {
+  color: white;
+  background-color: var(--tertiary-color);
+  border: 2px solid var(--tertiary-color);
+  padding: 30px 50px;
+  cursor: pointer;
+}
+
+.botao-jogos button:hover {
+  background-color: var(--secondary-color);
+}
+
+footer {
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.lista-opcoes {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 50px 0;
+}
+
+footer h4 {
+  color: white;
+  text-transform: uppercase;
+  font-size: .9rem;
+}
+
+footer ul {
+  color: grey;
+  font-size: .8rem;
+  padding: 3px 0;
+}
+
+footer ul li {
+  padding: 3px 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+footer ul li:hover {
+  color: goldenrod;
+}
+
+.pagamento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.pagamento .imagem-pagamentos::after {
+  content: "";
+  background-image: url(../img/pagamentos.png);
+  display: inline-block;
+  width: 354px;
+  height: 78px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  background-color: var(--quaternary-color);
+  padding: 50px 0;
+}
+
+.icones {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.facebook::after {
+  display: inline-block;
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-image: url(../img/facebook.png);
+  background-size: 100%;
+}
+
+.instagram::after {
+  display: inline-block;
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-image: url(../img/instagram.png);
+  background-size: 100%;
+}
+
+.twitter::after {
+  display: inline-block;
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-image: url(../img/twitter.png);
+  background-size: 100%;
+}
+
+.linkedin::after {
+  display: inline-block;
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-image: url(../img/linkedin.png);
+  background-size: 100%;
+}
+
+.youtube::after {
+  display: inline-block;
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-image: url(../img/youtube.png);
+  background-size: 100%;
+}
+
+footer b {
+  color: grey;
+  font-size: .8rem;
+  padding: 20px 0;
+}
+
+@media (max-width: 354px) {
+  .pagamento .imagem-pagamentos::after {
+    width: 300px;
+  }
+}

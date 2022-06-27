@@ -1,0 +1,94 @@
+body{
+	background-color: #05202D;
+	color: white;
+}
+h1{
+	text-shadow: 2px 2px 2px black;
+	text-align: center;
+	font-size:30px;
+	padding: 1em 0;
+}
+span{
+	color: orangered;
+}
+.formulario{
+	text-align: center;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom:50px;
+	padding: 1em;
+	border:2px solid #062A3D;
+	background: url(../img/Rengar_0.jpg);
+	background-size: cover;
+	background-position:center;
+}
+#contato .formulario{
+	background-image: url(../img/super-mario.jpg);
+}
+.formulario legend{
+	font-size: 22px;
+}
+
+.formulario form{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.formulario .caixa{
+	display: inline-flex;
+	gap:10px;
+}
+.formulario input, .formulario textarea{
+	padding: 1em 1.5em;
+	background-color: rgba(6, 42, 61, 0.8);
+	color: white;
+	margin-left:5px;
+	width: 18rem;
+}
+.formulario textarea{
+	width: 100%;
+	margin-top:10px;
+}
+.formulario input:focus, .formulario button:hover{
+	background-color: #05202D;
+}
+.formulario button{
+	background-color:#062A3D;
+	color: white;
+	font-size: 14px;
+	font-weight: 600;
+	width: 30%;
+	padding: 0.3em 1.5em;
+}
+.formulario button[type='reset']{
+	background-color: rgb(255, 0, 0, 0.8);
+}
+.formulario button[type='reset']:hover{
+	background-color: red;
+}
+.formulario .caixa.botoes{
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+.formulario input, .formulario button, .formulario textarea{
+	
+	border-radius: 5px;
+	border:2px solid #062A3D;
+	margin-top:5px;
+	
+}
+@media screen and (max-width:768px){
+	.formulario .caixa{
+		display: inline;
+	}
+	.formulario button{
+		width: 100%;
+		padding: 1em 0;
+	}
+	.formulario input, .formulario textarea{
+		margin-left: 0;
+		width: 100%;
+	}
+}

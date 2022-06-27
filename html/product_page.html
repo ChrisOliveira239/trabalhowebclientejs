@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/search_box.css">
+  <link rel="stylesheet" href="../css/carousel_product-page.css">
+  <link rel="stylesheet" href="../css/product_page.css">
+  <script src="/script/product-page.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+
+      <a href="index.html">
+        <div class="logo">
+          <b class="logo_cor">G</b>
+          <b class="logo_branco">ear</b>
+          <b class="logo_cor">U</b>
+          <b class="logo_branco">p.</b>
+          <b class="logo_cor">gg</b>
+          <div class="gearIcon">
+            <b class="gear_black">&#x2699;</b>
+            <b class="gear">&#x2699;</b>
+          </div>
+        </div>
+      </a>
+
+      <div class="searchBox">
+        <input class="search_input" type="search" placeholder="Busque seu jogo aqui">
+        <button class="search_button">&#x1f50d;&#xFE0E;</button>
+      </div>
+
+      <div class="navButtons">
+        <ul>
+          <li><a href="carrinho.html">Carrinho</a></li>
+          <li><a href="product_page.html">Produtos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="cadastro.html">Entrar</a></li>
+        </ul>
+      </div>
+
+      <input type="checkbox" name="" id="check">
+
+      <label for="check">
+        <span class="bar botao">&#x2630;</span>
+        <span class="close botao">&#10006;</span>
+      </label>
+
+      <div class="smallMenu">
+        <div class="navButtons2">
+          <a href="carrinho.html">Carrinho</a>
+          <a href="product_page.html">Produtos</a>
+          <a href="contato.html">Contato</a>
+          <a href="cadastro.html">Entrar</a>
+        </div>
+      </div>
+
+    </nav>
+  </header>
+  <main>
+
+    <div class="carousel-wrapper">
+
+      <span id="item-1"></span>
+      <span id="item-2"></span>
+      <span id="item-3"></span>
+
+      <div class="carousel-item item-1">
+        <a href="#item-3" class="arrow-prev arrow"></a>
+        <a href="#item-2" class="arrow-next arrow"></a>
+      </div>
+
+      <div class="carousel-item item-2">
+        <a href="#item-1" class="arrow-prev arrow"></a>
+        <a href="#item-3" class="arrow-next arrow"></a>
+      </div>
+
+      <div class="carousel-item item-3">
+        <a href="#item-2" class="arrow-prev arrow"></a>
+        <a href="#item-1" class="arrow-next arrow"></a>
+      </div>
+
+    </div>
+
+    <div class="tabs">
+
+      <input type="radio" name="mytabs" id="tab-1" checked="checked">
+      <label class="tabs-1" for="tab-1">Itens</label>
+
+      <div class="tab-content">
+
+        <div class="top">
+
+          <select name="server" id="select-server">
+            <option value="" disabled selected>Servidor</option>
+            <option value="NA">America do Norte</option>
+            <option value="SA">America do Sul</option>
+            <option value="EUW">Europa Leste</option>
+            <option value="EUN">Europa Oeste</option>
+            <option value="Asia">Asia</option>
+            <option value="OCE">Oceania</option>
+          </select>
+
+          <select name="category" id="select-category">
+            <option value="" disabled selected>Categoria</option>
+            <option value="armor">Armadura</option>
+            <option value="consumable">Consumivel</option>
+            <option value="weapons">Armas</option>
+            <option value="material">Materias</option>
+            <option value="pets">Pets</option>
+            <option value="mounts">Montarias</option>
+            <option value="skins">Skins</option>
+            <option value="tools">Ferramentas</option>
+            <option value="other">Outros</option>
+          </select>
+
+          <button id="filtrar">Ir</button>
+
+          <div class="search-item">
+            <input type="text" placeholder="Busque seu item aqui">
+            <button>&#x1f50d;&#xFE0E;</button>
+          </div>
+
+        </div>
+
+        <div class="mid">
+
+          <div class="list">
+
+            <table>
+              <thead>
+                <tr>
+                  <th><b>titulo</b></th>
+                  <th><b>avaliação</b></th>
+                  <th><b>entrega</b></th>
+                  <th><b>preco</b></th>
+                </tr>
+              </thead>
+              <tbody class="table-body"></tbody>
+
+            </table>
+
+          </div>
+          <div class="list-responsive">
+            <div class="responsive-list-item">
+
+              <div class="item-header">
+
+                <div class="nome_icone">
+                  <div class="titulo">
+                    <div class="nome-item"></div>
+                    <div class="categoria-item">&#x1f50d;&#xFE0E;</div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="item-body">
+                <div class="body-top">
+                  <div class="icone"></div>
+                  <div class="seller">
+                    <div class="seller-icon">
+                      <div class="seller-lvl">
+                      </div>
+                    </div>
+                    <div class="seller-info">
+                      <span class="seller-name"></span>
+                      <span class="seller-total-orders"></span>
+                      <span class="seller-member-since"></span>
+                      <div class="seller-stars-rate"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="body-mid">
+                  <div class="price_deliver">
+                    <b></b>
+                    <b></b>
+                  </div>
+                  <div class="quantity-box">
+                    <label for="quantity-input">Quantia: </label>
+                    <input type="number" name="quantity-input" id="quantity-input" value="1">
+                  </div>
+                </div>
+                <div class="body-bottom">
+                  <button class="comprar">Comprar</button>
+                </div>
+
+
+              </div>
+            </div>
+            <div class="responsive-list-item">
+
+              <div class="item-header">
+
+                <div class="nome_icone">
+                  <div class="titulo">
+                    <div class="nome-item"></div>
+                    <div class="categoria-item">&#x1f50d;&#xFE0E;</div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="item-body">
+                <div class="body-top">
+                  <div class="icone"></div>
+                  <div class="seller">
+                    <div class="seller-icon">
+                      <div class="seller-lvl">
+                      </div>
+                    </div>
+                    <div class="seller-info">
+                      <span class="seller-name"></span>
+                      <span class="seller-total-orders"></span>
+                      <span class="seller-member-since"></span>
+                      <div class="seller-stars-rate"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="body-mid">
+                  <div class="price_deliver">
+                    <b></b>
+                    <b></b>
+                  </div>
+                  <div class="quantity-box">
+                    <label for="quantity-input">Quantia: </label>
+                    <input type="number" name="quantity-input" id="quantity-input" value="1">
+                  </div>
+                </div>
+                <div class="body-bottom">
+                  <button class="comprar">Comprar</button>
+                </div>
+
+
+              </div>
+            </div>
+            <div class="responsive-list-item">
+
+              <div class="item-header">
+
+                <div class="nome_icone">
+                  <div class="titulo">
+                    <div class="nome-item"></div>
+                    <div class="categoria-item">&#x1f50d;&#xFE0E;</div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="item-body">
+                <div class="body-top">
+                  <div class="icone"></div>
+                  <div class="seller">
+                    <div class="seller-icon">
+                      <div class="seller-lvl">
+                      </div>
+                    </div>
+                    <div class="seller-info">
+                      <span class="seller-name"></span>
+                      <span class="seller-total-orders"></span>
+                      <span class="seller-member-since"></span>
+                      <div class="seller-stars-rate"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="body-mid">
+                  <div class="price_deliver">
+                    <b></b>
+                    <b></b>
+                  </div>
+                  <div class="quantity-box">
+                    <label for="quantity-input">Quantia: </label>
+                    <input type="number" name="quantity-input" id="quantity-input" value="1">
+                  </div>
+                </div>
+                <div class="body-bottom">
+                  <button class="comprar">Comprar</button>
+                </div>
+
+
+              </div>
+            </div>
+            <div class="responsive-list-item">
+
+              <div class="item-header">
+
+                <div class="nome_icone">
+                  <div class="titulo">
+                    <div class="nome-item"></div>
+                    <div class="categoria-item">&#x1f50d;&#xFE0E;</div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="item-body">
+                <div class="body-top">
+                  <div class="icone"></div>
+                  <div class="seller">
+                    <div class="seller-icon">
+                      <div class="seller-lvl">
+                      </div>
+                    </div>
+                    <div class="seller-info">
+                      <span class="seller-name"></span>
+                      <span class="seller-total-orders"></span>
+                      <span class="seller-member-since"></span>
+                      <div class="seller-stars-rate"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="body-mid">
+                  <div class="price_deliver">
+                    <b></b>
+                    <b></b>
+                  </div>
+                  <div class="quantity-box">
+                    <label for="quantity-input">Quantia: </label>
+                    <input type="number" name="quantity-input" id="quantity-input" value="1">
+                  </div>
+                </div>
+                <div class="body-bottom">
+                  <button class="comprar">Comprar</button>
+                </div>
+
+
+              </div>
+            </div>
+            <div class="responsive-list-item">
+
+              <div class="item-header">
+
+                <div class="nome_icone">
+                  <div class="titulo">
+                    <div class="nome-item"></div>
+                    <div class="categoria-item">&#x1f50d;&#xFE0E;</div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="item-body">
+                <div class="body-top">
+                  <div class="icone"></div>
+                  <div class="seller">
+                    <div class="seller-icon">
+                      <div class="seller-lvl">
+                      </div>
+                    </div>
+                    <div class="seller-info">
+                      <span class="seller-name"></span>
+                      <span class="seller-total-orders"></span>
+                      <span class="seller-member-since"></span>
+                      <div class="seller-stars-rate"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="body-mid">
+                  <div class="price_deliver">
+                    <b></b>
+                    <b></b>
+                  </div>
+                  <div class="quantity-box">
+                    <label for="quantity-input">Quantia: </label>
+                    <input type="number" name="quantity-input" id="quantity-input" value="1">
+                  </div>
+                </div>
+                <div class="body-bottom">
+                  <button class="comprar">Comprar</button>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <input type="radio" name="mytabs" id="tab-2" disabled>
+      <label class="tabs-1" for="tab-2">Ouro</label>
+
+      <input type="radio" name="mytabs" id="tab-3" disabled>
+      <label class="tabs-1" for="tab-3">Contas</label>
+
+      <input type="radio" name="mytabs" id="tab-4" disabled>
+      <label class="tabs-1" for="tab-4">Serviços</label>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="lista-opcoes">
+      <div class="gearup">
+        <h4>GearUp</h4>
+        <ul>
+          <li>Sobre nós</li>
+          <li>Game Index</li>
+          <li>Blog</li>
+          <li>Mapa do site</li>
+          <li>CSR</li>
+        </ul>
+      </div>
+      <div class="suporte">
+        <h4>Suporte</h4>
+        <ul>
+          <li>Centro de ajuda</li>
+          <li>Contate-nos</li>
+          <li>Como comprar</li>
+          <li>Como vender</li>
+          <li>Acessibilidade</li>
+        </ul>
+      </div>
+      <div class="juridico">
+        <h4>Juridico</h4>
+        <ul>
+          <li>Termo de acordo de usuario</li>
+          <li>Politica de privacidade</li>
+          <li>Politica de copyright</li>
+          <li>Politica de cookies</li>
+          <li>Solicitação de acesso do titular dos dados</li>
+        </ul>
+      </div>
+      <div class="pagamento">
+        <h4>Metodos de pagamento</h4>
+        <div class="imagem-pagamentos"></div>
+      </div>
+    </div>
+    <div class="social">
+      <div class="icones">
+        <div class="facebook"></div>
+        <div class="instagram"></div>
+        <div class="twitter"></div>
+        <div class="linkedin"></div>
+        <div class="youtube"></div>
+      </div>
+      <b>Copyright 2022 - Todos os direitos reservados</b>
+    </div>
+  </footer>
+
+</body>
+
+</html>

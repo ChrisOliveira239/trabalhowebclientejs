@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      //option A
+      $("form").submit(function (e) {
+
+        if (!$.trim($("#nomeC").val())) {
+          $('#legenda').text('POR FAVOR, PREENCHA OS CAMPOS ANTES DE CONTINUAR');
+          e.preventDefault(e);
+          return;
+        } else {
+          if (!$.trim($("#emailC").val())) {
+            $('#legenda').text('POR FAVOR, PREENCHA OS CAMPOS ANTES DE CONTINUAR');
+            e.preventDefault(e);
+            return;
+          } else {
+            if (!$.trim($("#mensagem").val())) {
+              $('#legenda').text('POR FAVOR, PREENCHA OS CAMPOS ANTES DE CONTINUAR');
+              e.preventDefault(e);
+              return;
+            }else{
+              $('#legenda').text('MENSAGEM ENVIADA');
+              e.preventDefault(e);
+            }
+          }
+        }
+
+
+      });
+
+    });
+  </script>
+  <title>Formulário de Cadastro</title>
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/search_box.css">
+  <link rel="stylesheet" href="../css/cadastro.css">
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+
+      <a href="index.html">
+        <div class="logo">
+          <b class="logo_cor">G</b>
+          <b class="logo_branco">ear</b>
+          <b class="logo_cor">U</b>
+          <b class="logo_branco">p.</b>
+          <b class="logo_cor">gg</b>
+          <div class="gearIcon">
+            <b class="gear_black">&#x2699;</b>
+            <b class="gear">&#x2699;</b>
+          </div>
+        </div>
+      </a>
+
+      <div class="searchBox">
+        <input class="search_input" type="search" placeholder="Busque seu jogo aqui">
+        <button class="search_button">&#x1f50d;&#xFE0E;</button>
+      </div>
+
+      <div class="navButtons">
+        <ul>
+          <li><a href="index.html">Carrinho</a></li>
+          <li><a href="product_page.html">Produtos</a></li>
+          <li><a href="#contact">Contato</a></li>
+          <li><a href="#login">Entrar</a></li>
+        </ul>
+      </div>
+
+      <input type="checkbox" name="" id="check">
+
+      <label for="check">
+        <span class="bar botao">&#x2630;</span>
+        <span class="close botao">&#10006;</span>
+      </label>
+
+      <div class="smallMenu">
+        <div class="navButtons2">
+          <a href="carrinho.html">Carrinho</a>
+          <a href="product_page.html">Produtos</a>
+          <a href="contato.html">Contato</a>
+          <a href="cadastro.html">Entrar</a>
+        </div>
+      </div>
+
+    </nav>
+  </header>
+
+  <section id="contato">
+    <h1>Seja um Cliente <span>G</span>ear<span>U</span>p!!</h1>
+    <fieldset class="formulario">
+      <legend id="legenda">Entre em contato conosco</legend>
+      <form action="" method="post">
+        <div class="caixa">
+          <input type="text" name="nomeC" id="nomeC" placeholder="Nome completo"><br>
+          <input type="email" name="emailC" id="emailC" placeholder="seu Email"><br>
+        </div>
+        <div class="caixa">
+          <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
+        </div>
+
+
+
+        <div class="caixa botoes">
+          <button type="reset">Limpar</button>
+          <button id="enviar">Enviar Mensagem</button>
+        </div>
+        
+      </form>
+    </fieldset>
+  </section>
+  <footer>
+    <div class="lista-opcoes">
+      <div class="gearup">
+        <h4>GearUp</h4>
+        <ul>
+          <li>Sobre nós</li>
+          <li>Game Index</li>
+          <li>Blog</li>
+          <li>Mapa do site</li>
+          <li>CSR</li>
+        </ul>
+      </div>
+      <div class="suporte">
+        <h4>Suporte</h4>
+        <ul>
+          <li>Centro de ajuda</li>
+          <li>Contate-nos</li>
+          <li>Como comprar</li>
+          <li>Como vender</li>
+          <li>Acessibilidade</li>
+        </ul>
+      </div>
+      <div class="juridico">
+        <h4>Juridico</h4>
+        <ul>
+          <li>Termo de acordo de usuario</li>
+          <li>Politica de privacidade</li>
+          <li>Politica de copyright</li>
+          <li>Politica de cookies</li>
+          <li>Solicitação de acesso do titular dos dados</li>
+        </ul>
+      </div>
+      <div class="pagamento">
+        <h4>Metodos de pagamento</h4>
+        <div class="imagem-pagamentos"></div>
+      </div>
+    </div>
+    <div class="social">
+      <div class="icones">
+        <div class="facebook"></div>
+        <div class="instagram"></div>
+        <div class="twitter"></div>
+        <div class="linkedin"></div>
+        <div class="youtube"></div>
+      </div>
+      <b>Copyright 2022 - Todos os direitos reservados</b>
+    </div>
+  </footer>
+</body>
+
+</html>

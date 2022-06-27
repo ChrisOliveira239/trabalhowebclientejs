@@ -1,0 +1,88 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "itemNome": "Foice Gelada do Senhor Ahune",
+      "itemImg": "https://wow.zamimg.com/images/wow/icons/large/inv_staff_78.jpg",
+      "itemCategoria": "Armas",
+      "itemVendedorImg": "/img/user.png",
+      "itemVendedorLvl": 1,
+      "itemVendedorNome": "Nome do vendedor 1",
+      "itemVendedorTotalVendas": 2.483,
+      "itemVendedorMembroDesde": 2020,
+      "itemVendedorAvaliacao": "5.0",
+      "itemTempoEntrega": "20min",
+      "itemPreco": "50,00"
+    },
+    {
+      "id": 2,
+      "itemNome": "Indumentária: Vestuário da Patrulheira Sombria",
+      "itemImg": "https://wow.zamimg.com/images/wow/icons/large/achievement_leader_sylvanas.jpg",
+      "itemCategoria": "Outrosas",
+      "itemVendedorImg": "/img/user.png",
+      "itemVendedorLvl": 3,
+      "itemVendedorNome": "Nome do vendedor 2",
+      "itemVendedorTotalVendas": 760,
+      "itemVendedorMembroDesde": 2022,
+      "itemVendedorAvaliacao": "4.5",
+      "itemTempoEntrega": "24h",
+      "itemPreco": "23,00"
+    },
+    {
+      "id": 3,
+      "itemNome": "Item 3",
+      "itemImg": "/img/icone-item.png",
+      "itemCategoria": "Categoria do item 3",
+      "itemVendedorImg": "/img/user.png",
+      "itemVendedorLvl": 2,
+      "itemVendedorNome": "Nome do vendedor 3",
+      "itemVendedorTotalVendas": 153,
+      "itemVendedorMembroDesde": 2021,
+      "itemVendedorAvaliacao": "4.8",
+      "itemTempoEntrega": "20min",
+      "itemPreco": "5,00"
+    },
+    {
+      "id": 4,
+      "itemNome": "Item 4",
+      "itemImg": "/img/icone-item.png",
+      "itemCategoria": "Categoria do item 4",
+      "itemVendedorImg": "/img/user.png",
+      "itemVendedorLvl": 10,
+      "itemVendedorNome": "Nome do vendedor 4",
+      "itemVendedorTotalVendas": 6.873,
+      "itemVendedorMembroDesde": 2018,
+      "itemVendedorAvaliacao": "4.9",
+      "itemTempoEntrega": "20min",
+      "itemPreco": "230,00"
+    },
+    {
+      "id": 5,
+      "itemNome": "Item 5",
+      "itemImg": "/img/icone-item.png",
+      "itemCategoria": "Categoria do item",
+      "itemVendedorImg": "/img/user.png",
+      "itemVendedorLvl": 6,
+      "itemVendedorNome": "Nome do vendedor 5",
+      "itemVendedorTotalVendas": 453,
+      "itemVendedorMembroDesde": 2020,
+      "itemVendedorAvaliacao": "4.2",
+      "itemTempoEntrega": "24h",
+      "itemPreco": "493,99"
+    },
+    {
+      "id": 6,
+      "itemNome": "Item 6",
+      "itemImg": "/img/icone-item.png",
+      "itemCategoria": "Categoria do item",
+      "itemVendedorImg": "/img/user.png",
+      "itemVendedorLvl": 3,
+      "itemVendedorNome": "Nome do vendedor 6",
+      "itemVendedorTotalVendas": 987,
+      "itemVendedorMembroDesde": 2021,
+      "itemVendedorAvaliacao": "4.5",
+      "itemTempoEntrega": "24h",
+      "itemPreco": "41,99"
+    }
+  ]
+}

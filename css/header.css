@@ -1,0 +1,181 @@
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary-color: #062a3d;
+  --secondary-color: #05202d;
+  --tertiary-color: #083349;
+  --quaternary-color: #042435
+}
+
+nav {
+  display: flex;
+  background: var(--primary-color);
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+}
+
+nav label {
+  display: none;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.logo {
+  display: flex;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.logo_cor {
+  color: orangered;
+}
+
+.gearIcon {
+  display: grid;
+  margin-left: 5px;
+}
+
+.gear,
+.gear_black {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.gear_black {
+  color: black;
+  margin: 2px 0 0 3px;
+}
+
+.navButtons>ul {
+  display: flex;
+  list-style: none;
+  gap: .5rem;
+}
+
+.navButtons a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.navButtons a:hover {
+  color: var(--primary-color);
+  background-color: white;
+}
+
+.smallMenu {
+  display: none;
+  height: 100%;
+  background-color: var(--primary-color);
+  width: 300px;
+  z-index: 4;
+  transition: 0.3s ease-in-out;
+  transform: translateX(-300px);
+}
+
+.navButtons2 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 86px;
+}
+
+.navButtons2 a {
+  padding: 20px 0;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.navButtons2 a:hover {
+  color: #0a5071;
+  background-color: white;
+}
+
+#check {
+  visibility: hidden;
+  display: none;
+}
+
+.botao {
+  z-index: 5;
+  color: white;
+  font-size: 2rem;
+  position: absolute;
+  top: 25px;
+  left: 5px;
+  cursor: pointer;
+  display: none;
+}
+
+
+#check:checked~.smallMenu {
+  transform: translateX(0);
+}
+
+#check:checked~label .bar {
+  display: none;
+}
+
+#check:checked~label .close {
+  display: block;
+}
+
+
+
+@media (max-width: 905px) {
+  nav {
+    flex-direction: column;
+    gap: .5rem;
+  }
+}
+
+@media (max-width:768px) {
+
+  nav label {
+    display: block;
+  }
+
+  .bar {
+    display: block;
+  }
+
+  .logo_branco,
+  .logo_cor {
+    display: none;
+  }
+
+  .gearIcon {
+    font-size: 3rem;
+  }
+
+  .navButtons {
+    display: none;
+  }
+
+  .smallMenu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (max-width:320px) {
+  .smallMenu {
+    width: 320px;
+    transform: translateX(-320px);
+  }
+}

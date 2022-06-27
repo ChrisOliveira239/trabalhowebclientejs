@@ -1,0 +1,502 @@
+/* Seria muito mais facil ter feito isso com SASS mas eu percebi isso tarde de mais e fiquei com preguiça */
+
+:root {
+  --primary-color: #062a3d;
+  --secondary-color: #05202d;
+  --tertiary-color: #083349;
+  --quaternary-color: #042435
+}
+
+main {
+  background-color: var(--primary-color);
+  overflow-x: hidden;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tabs input[type="radio"] {
+  display: none;
+}
+
+.tabs input[type="radio"]:checked+.tabs-1+.tab-content {
+  display: block;
+}
+
+.tabs input[type="radio"]:checked+.tabs-1 {
+  background-color: var(--secondary-color);
+}
+
+.tabs .tabs-1 {
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tab-content {
+  background-color: var(--secondary-color);
+  width: 100%;
+  padding: 20px;
+  color: white;
+  order: 1;
+  display: none;
+}
+
+.tab-content .top {
+  display: flex;
+  gap: 10px;
+}
+
+.tab-content .top select,
+button {
+  padding: 5px 15px;
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  height: fit-content;
+  align-self: center;
+}
+
+.tab-content .top button:hover {
+  background-color: white;
+  color: var(--primary-color);
+
+}
+
+.tab-content .top .search-item {
+  display: flex;
+  margin-left: auto;
+}
+
+.tab-content .top .search-item input {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  padding: 0 20px;
+  color: white;
+}
+
+
+.tab-content .top .search-item button {
+  background-color: var(--tertiary-color);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: -1px;
+}
+
+.tab-content .top .search-item button:hover {
+  background-color: white;
+  color: var(--tertiary-color);
+}
+
+.tab-content .mid .list table {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.tab-content .mid .list table thead {
+  text-align: left;
+}
+
+.tab-content .mid .list table,
+th,
+td {
+  border: 1px solid var(--tertiary-color);
+  border-left: 0;
+  border-right: 0;
+  border-collapse: collapse;
+  padding: 20px 0;
+}
+
+.tab-content .mid .list table th {
+  text-transform: capitalize;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.tab-content .mid .list table tr td:nth-child(1) {
+  width: 400px;
+}
+
+.tab-content .mid .list table tr td:nth-child(2) {
+  width: 350px;
+}
+
+.tab-content .mid .list table tr td:nth-child(3) {
+  width: 150px;
+}
+
+.tab-content .mid .list table tr td:nth-child(4) {
+  width: 100px;
+}
+
+.tab-content .mid .list table thead th:nth-child(1) b {
+  margin-left: 150px;
+}
+
+.tab-content .mid .list table thead th:nth-child(2) b {
+  margin-left: 80px;
+}
+
+.tab-content .mid .list table thead th:nth-child(5) {
+  text-align: center;
+}
+
+
+.tab-content .mid .list table tr:nth-child(even) {
+  background-color: var(--quaternary-color);
+}
+
+.nome_icone {
+  margin-left: 10px;
+  display: flex;
+}
+
+.icone {
+  content: url(/img/icone-item.png);
+}
+
+.nome_icone .titulo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nome_icone .titulo .nome-item::after {
+  content: "Nome do item";
+  font-size: 1.5rem;
+  color: goldenrod;
+  margin-left: 10px;
+}
+
+.nome_icone .titulo .categoria-item {
+  margin-left: 10px
+}
+
+.nome_icone .titulo .categoria-item::after {
+  content: "Categoria do item";
+  font-size: .8rem;
+  color: grey;
+  margin-left: 5px;
+}
+
+.seller {
+  display: flex;
+  gap: 20px;
+  width: 250px;
+}
+
+.seller .seller-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.seller .seller-icon::after {
+  content: "";
+  background-image: url(/img/user.png);
+  background-size: cover;
+  border: 3px solid aqua;
+  border-radius: 50%;
+  height: 64px;
+  width: 64px;
+}
+
+table tr:nth-child(even) .seller .seller-icon::after {
+  border-color: gold;
+}
+
+.seller .seller-lvl {
+  order: 2;
+}
+
+.seller .seller-lvl::after {
+  content: "Lvl 1";
+  color: aqua;
+  justify-self: center;
+}
+
+table tr:nth-child(even) .seller .seller-lvl::after {
+  content: "Lvl 5";
+  color: gold;
+  justify-self: center;
+}
+
+.seller .seller-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+
+.seller .seller-info .seller-name::after {
+  content: "Nome do usuário";
+}
+
+.seller .seller-info .seller-total-orders::after {
+  content: "Total de vendas: 2,392";
+  color: grey;
+  font-size: .9rem;
+}
+
+table tr:nth-child(even) .seller .seller-info .seller-total-orders::after {
+  content: "Total de vendas: 5,203";
+}
+
+.seller .seller-info .seller-member-since::after {
+  content: "Membro desde: 2020";
+  color: grey;
+  font-size: .9rem;
+}
+
+table tr:nth-child(even) .seller .seller-info .seller-member-since::after {
+  content: "Membro desde: 2018";
+}
+
+.seller .seller-info .seller-stars-rate::before {
+  content: "5.0";
+  color: gold;
+  font-size: .9rem;
+}
+
+.seller .seller-info .seller-stars-rate::after {
+  margin-left: 5px;
+  content: "";
+  display: inline-block;
+  background-image: url(/img/stars.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 80px;
+  height: 15px;
+}
+
+.tab-content .mid .list .deliver-time {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80px;
+}
+
+.tab-content .mid .list .deliver-time .deliver-icon::after {
+  content: "";
+  display: inline-block;
+  background-image: url(/img/24h.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 70px;
+}
+
+.tab-content .mid .list table tr:nth-child(even) .deliver-icon::after {
+  background-image: url(/img/20min.png);
+}
+
+.tab-content .mid .list table tr:nth-child(even) .deliver-text::after {
+  content: "20 minutos";
+}
+
+.tab-content .mid .list .deliver-time .deliver-text {
+  margin-top: -20px;
+}
+
+.tab-content .mid .list .deliver-time .deliver-text::after {
+  content: "24 horas";
+  font-size: .9rem;
+  color: grey;
+}
+
+
+
+.quantity-box input {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--tertiary-color);
+  border-radius: 3px;
+  outline: none;
+  width: 50px;
+  color: white;
+  padding: 5px;
+}
+
+.tab-content .mid .list table tr:nth-child(even) .quantity-box input {
+  background-color: var(--quaternary-color);
+}
+
+.tab-content .mid .list .compra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.tab-content .mid .list .compra .preco::after {
+  content: "R$ 20,00";
+  font-size: 1.8rem;
+}
+
+.tab-content .mid .list table tr:nth-child(even) .compra .preco::after {
+  content: "R$ 50,00";
+}
+
+.comprar {
+  width: 150px;
+  text-transform: uppercase;
+  color: black;
+  font-weight: bold;
+  background-color: #47D62D;
+}
+
+.list-responsive {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+}
+
+.responsive-list-item {
+  width: 100%;
+  border: 1px solid var(--tertiary-color);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--tertiary-color);
+  padding: 10px 0;
+}
+
+.item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.body-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.body-top .seller {
+  width: auto;
+}
+
+.body-top .seller-info {
+  width: auto;
+}
+
+.body-top .seller .seller-icon::after {
+  display: none;
+}
+
+.body-top .seller .seller-lvl::after {
+  display: none;
+}
+
+.body-top .seller-total-orders {
+  display: none;
+}
+
+.body-top .seller .seller-member-since::after {
+  content: "Vendedor lvl 1";
+  color: aqua;
+}
+
+.list-responsive .responsive-list-item:nth-child(even) .seller-member-since::after {
+  content: "Vendedor lvl 5";
+  color: goldenrod;
+}
+
+.body-top .seller .seller-member-since::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url(/img/medal.png);
+  background-size: 100%;
+  display: inline-block;
+  margin-right: 2px;
+}
+
+.list-responsive .responsive-list-item:nth-child(even) .seller-member-since::before {
+  background-image: url(/img/medal-gold.png);
+}
+
+.body-mid {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.price_deliver {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.quantity-box {
+  font-size: .9rem;
+}
+
+.price_deliver b:nth-child(1)::after {
+  content: "R$ 20,00";
+  font-size: 1.5rem;
+}
+
+.list-responsive .responsive-list-item:nth-child(even) .price_deliver b:nth-child(1)::after {
+  content: "R$ 50,00";
+}
+
+.price_deliver b:nth-child(2)::after {
+  content: "Entrega: 24hrs";
+  font-size: .9rem;
+  font-weight: normal;
+  color: grey;
+}
+
+.list-responsive .responsive-list-item:nth-child(even) .price_deliver b:nth-child(2)::after {
+  content: "Entrega: 20min";
+}
+
+@media(max-width:768px) {
+  .list-responsive {
+    display: flex;
+  }
+
+  .comprar {
+    width: 100%;
+  }
+
+  .tab-content .top {
+    flex-direction: column;
+  }
+
+  .tab-content .top select,
+  button {
+    width: 100%;
+  }
+
+  .tab-content .top .search-item,
+  input {
+    width: 100%;
+  }
+
+  .tab-content .top .search-item button {
+    width: 20%;
+  }
+
+  table {
+    display: none;
+  }
+}

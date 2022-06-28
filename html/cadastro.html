@@ -79,18 +79,29 @@
         }
       });
 
-      function calculaMaioridade(nasc) {
-        var hoje = new Date(), idade;
+	  function checarIdade(){
+		var nascimento = new Date($('#data').val());
+		var diaN = nascimento.getDate() + 1;
+		var mesN = nascimento.getMonth() + 1;
+		var anoN = nascimento.getFullYear();
 
-        idade = (
-          (hoje.getMonth() > nasc.getMonth())
-          ||
-          (hoje.getMonth() == nasc.getMonth() && hoje.getDate() >= nasc.getDate())
-        ) ? hoje.getFullYear() - nasc.getFullYear() : hoje.getFullYear() - nasc.getFullYear() - 1;
+		var hoje = new Date();
+		var diaH = hoje.getDate();
+		var mesH = hoje.getMonth();
+		var anoH = hoje.getFullYear();
+		var idade = 0;
 
-        if (idade > 18) {alert('valendo')}else{alert('não vale')};
-      }
+		if(mesH>mesN) idade = anoH - anoN;
+		else if(mesH == mesN){
+			if(diaH>=diaN) idade = anoH - anoN;
+			else idade = anoH - anoN - 1;
+		}
+		else idade = anoH - anoN-1;
+		if(idade<18){
+			return false;
+		} return true;
 
+	  }
 
       $("form").submit(function (e) {
         var validado = true;
@@ -110,7 +121,15 @@
           $('legend').text('POR FAVOR, PREENCHA OS CAMPOS ANTES DE CONTINUAR');
           }
         }else{
-          $('legend').text('cadastrado');
+			if(checarIdade()){
+				$('legend').text('VOCÊ FOI CADASTRADO E ESTÁ LOGADO');
+		  		localStorage.setItem('logado',true);
+			}else{
+				$('legend').text('VocÊ precisa ter 18 anos ou mais');
+			}
+			
+		
+          
         }
         e.preventDefault(e);
       });

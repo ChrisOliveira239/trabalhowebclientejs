@@ -1,6 +1,7 @@
 import Data from "./data.js";
 import Storage from "./storage.js";
 import createAlert from "./alert.js";
+import createModal from "./modal.js";
 
 const tableDOM = document.querySelector(".table-body");
 
@@ -14,7 +15,7 @@ class UI {
       <tr>
         <td>
           <div class="nome_icone">
-            <div class="icone"><img src=${product.itemImg} alt="item-icon"></div>
+            <div class="icone"><img src=${product.itemImg} alt="item-icon" class="produto-img" data-id=${product.id}></div>
             <div class="titulo">
               <div class="nome-item">${product.itemNome}</div>
               <div class="categoria-item"><i class="fas fa-search"></i>${product.itemCategoria}</div>
@@ -111,6 +112,14 @@ class Logic {
       this.sortProducts(selectSort.value);
     };
   }
+  static itemModalLogic() {
+    const produtoImg = document.querySelectorAll(".produto-img");
+    produtoImg.forEach((img) => {
+      img.addEventListener("click", (event) => {
+        createModal(img.dataset.id);
+      });
+    });
+  }
 }
 
 const init = () => {
@@ -122,6 +131,7 @@ const init = () => {
     .then(() => {
       Logic.btnComprarLogic();
       Logic.sortOptionsLogic();
+      Logic.itemModalLogic();
     });
 };
 

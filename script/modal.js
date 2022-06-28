@@ -1,12 +1,10 @@
-export default function createAlert(text) {
+export default function createModal(id) {
   const existingAlert = document.querySelector(".alert");
 
   const alert = document.createElement("div");
-  alert.className = "alert";
+  alert.className = "modal";
   alert.innerHTML = `
-    <p>
-      ${text}
-    </p>
+    <img src="/img/item${id}.png">
     <p class="closeAlert"> x </p>
   `;
 

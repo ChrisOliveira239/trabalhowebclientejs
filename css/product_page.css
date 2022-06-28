@@ -202,6 +202,10 @@ td {
   height: 15px;
 }
 
+.produto-img {
+  cursor: pointer;
+}
+
 .tab-content .mid .deliver-time {
   display: flex;
   flex-direction: column;
@@ -431,9 +435,37 @@ footer b {
   animation: alertSlide 0.5s ease-in;
 }
 
+.modal {
+  position: fixed;
+  color: white;
+  background-color: var(--primary-color);
+  padding: 10px;
+  border-radius: 5px;
+  top: 30px;
+  left: -5px;
+  z-index: 5;
+  margin: auto 0;
+  display: flex;
+  gap: 15px;
+  animation: alertSlide 0.5s ease-in;
+}
+
+.modal .closeAlert {
+  cursor: pointer;
+  opacity: 50%;
+}
+
 .alert .closeAlert {
   cursor: pointer;
   opacity: 50%;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {}
 }
 
 @keyframes alertSlide {

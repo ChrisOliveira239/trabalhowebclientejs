@@ -7,8 +7,9 @@ let cart = [];
 class UI {
   static displayCartItems(products) {
     let result = "";
-    products.forEach((product) => {
-      result += `
+    if (products.length > 0) {
+      products.forEach((product) => {
+        result += `
         <tr>
           <td>
             <div class="produto-info">
@@ -32,7 +33,13 @@ class UI {
           </td>
         </tr>
       `;
-    });
+      });
+      tableDOM.innerHTML = result;
+      return;
+    }
+    result = `
+      <div style="width:100%; height: 175px; color: white; display: flex; justify-content: center; align-items: center">Nao há produtos no carrinho.</div>
+    `;
     tableDOM.innerHTML = result;
   }
 }
@@ -48,11 +55,22 @@ class Logic {
     });
   }
 
+  static btnRemoverTodosLogic() {
+    const buttonRemoveAll = document.querySelector(".remove-all");
+    buttonRemoveAll.addEventListener("click", (event) => this.clearCart());
+  }
+
   static updateCart(cart) {
     Storage.saveCart(cart);
     UI.displayCartItems(cart);
     this.btnRemoverProdutoLogic();
     this.updateTotal();
+  }
+
+  static clearCart() {
+    const cartItems = cart.map((item) => item.id);
+    cartItems.forEach((id) => this.removeItem(id));
+    console.log("hello");
   }
 
   static removeItem(id) {
@@ -72,6 +90,7 @@ class Logic {
 
 const init = () => {
   cart = Storage.getCart();
+  Logic.btnRemoverTodosLogic();
   Logic.updateCart(cart);
 };
 

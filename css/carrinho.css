@@ -5,15 +5,16 @@
   --quaternary-color: #042435;
 }
 
-.list-responsive {
-  display: none;
-}
-
 main {
   display: flex;
   width: 100%;
+  min-height: 100vh;
   padding: 50px 0;
   background-color: var(--secondary-color);
+}
+
+table {
+  border: 1px solid var(--tertiary-color);
 }
 
 main h2,
@@ -59,8 +60,6 @@ table tbody tr:nth-child(even) {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  border: 1px solid var(--tertiary-color);
-  border-radius: 5px;
 }
 
 .produtos-header {
@@ -68,6 +67,8 @@ table tbody tr:nth-child(even) {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   background-color: var(--tertiary-color);
 }
 
@@ -136,13 +137,16 @@ table tbody tr:nth-child(even) {
   border-radius: 3px;
   margin-right: 40px;
   width: 20%;
+  height: fit-content;
 }
 
 .resumo-head {
   padding: 10px 15px;
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: var(--tertiary-color);
+  height: 55px;
 }
 
 .resumo .resumo-body {
@@ -160,6 +164,7 @@ table tbody tr:nth-child(even) {
   flex-direction: column;
   align-items: center;
   padding: 10px 15px;
+  height: 55px;
 }
 
 .resumo-footer button {
@@ -172,7 +177,7 @@ table td img {
   margin-top: 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 911px) {
   main {
     flex-direction: column;
     gap: 15px;
@@ -187,11 +192,11 @@ table td img {
     width: 100%;
   }
 
-  .produtos-header button {
-    width: auto;
+  .resumo {
+    width: 100%;
   }
 
-  .resumo {
+  .resumo-footer button {
     width: 100%;
   }
 }

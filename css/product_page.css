@@ -19,6 +19,7 @@ main {
 .tabs .tab-itens {
   padding: 15px;
   color: white;
+  cursor: pointer;
 }
 
 .tab-itens:nth-child(1) {

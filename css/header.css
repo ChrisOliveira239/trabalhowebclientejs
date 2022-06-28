@@ -9,7 +9,7 @@
   --primary-color: #062a3d;
   --secondary-color: #05202d;
   --tertiary-color: #083349;
-  --quaternary-color: #042435
+  --quaternary-color: #042435;
 }
 
 nav {
@@ -39,26 +39,14 @@ nav a {
   color: orangered;
 }
 
-.gearIcon {
-  display: grid;
-  margin-left: 5px;
-}
-
-.gear,
-.gear_black {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.gear_black {
-  color: black;
-  margin: 2px 0 0 3px;
+.fa-gear {
+  font-size: 2rem;
 }
 
 .navButtons>ul {
   display: flex;
   list-style: none;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .navButtons a {
@@ -120,7 +108,6 @@ nav a {
   display: none;
 }
 
-
 #check:checked~.smallMenu {
   transform: translateX(0);
 }
@@ -133,23 +120,24 @@ nav a {
   display: block;
 }
 
-
-
 @media (max-width: 905px) {
   nav {
     flex-direction: column;
-    gap: .5rem;
+    gap: 0.5rem;
   }
 }
 
-@media (max-width:768px) {
-
+@media (max-width: 768px) {
   nav label {
     display: block;
   }
 
   .bar {
     display: block;
+  }
+
+  .close {
+    display: none;
   }
 
   .logo_branco,
@@ -173,7 +161,7 @@ nav a {
   }
 }
 
-@media (max-width:320px) {
+@media (max-width: 320px) {
   .smallMenu {
     width: 320px;
     transform: translateX(-320px);

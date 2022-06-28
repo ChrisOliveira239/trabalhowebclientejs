@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="../css/search_box.css">
   <link rel="stylesheet" href="../css/carousel_product-page.css">
   <link rel="stylesheet" href="../css/product_page.css">
-  <script src="/script/product-page.js" defer></script>
+  <script src="/script/product-page.js" type="module" defer></script>
+  <script src="https://kit.fontawesome.com/9ddcac1e6c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -24,16 +25,13 @@
           <b class="logo_cor">U</b>
           <b class="logo_branco">p.</b>
           <b class="logo_cor">gg</b>
-          <div class="gearIcon">
-            <b class="gear_black">&#x2699;</b>
-            <b class="gear">&#x2699;</b>
-          </div>
+          <i class="fas fa-gear"></i>
         </div>
       </a>
 
       <div class="searchBox">
         <input class="search_input" type="search" placeholder="Busque seu jogo aqui">
-        <button class="search_button">&#x1f50d;&#xFE0E;</button>
+        <i class="fas fa-search search_button"></i>
       </div>
 
       <div class="navButtons">
@@ -48,8 +46,8 @@
       <input type="checkbox" name="" id="check">
 
       <label for="check">
-        <span class="bar botao">&#x2630;</span>
-        <span class="close botao">&#10006;</span>
+        <i class="fas fa-bars bar botao"></i>
+        <i class="fas fa-x close botao"></i>
       </label>
 
       <div class="smallMenu">
@@ -88,10 +86,14 @@
 
     </div>
 
-    <div class="tabs">
+    <div class="content">
 
-      <input type="radio" name="mytabs" id="tab-1" checked="checked">
-      <label class="tabs-1" for="tab-1">Itens</label>
+      <div class="tabs">
+        <div class="tab-itens">Itens</div>
+        <div class="tab-itens">Ouro</div>
+        <div class="tab-itens">Contas</div>
+        <div class="tab-itens">Serviços</div>
+      </div>
 
       <div class="tab-content">
 
@@ -120,11 +122,11 @@
             <option value="other">Outros</option>
           </select>
 
-          <button id="filtrar">Ir</button>
+          <button id="filtrar" type="button">Ir</button>
 
           <div class="search-item">
             <input type="text" placeholder="Busque seu item aqui">
-            <button>&#x1f50d;&#xFE0E;</button>
+            <i class="fas fa-search"></i>
           </div>
 
         </div>
@@ -145,16 +147,6 @@
           </div>
 
         </div>
-
-        <input type="radio" name="mytabs" id="tab-2" disabled>
-        <label class="tabs-1" for="tab-2">Ouro</label>
-
-        <input type="radio" name="mytabs" id="tab-3" disabled>
-        <label class="tabs-1" for="tab-3">Contas</label>
-
-        <input type="radio" name="mytabs" id="tab-4" disabled>
-        <label class="tabs-1" for="tab-4">Serviços</label>
-
       </div>
 
   </main>

@@ -8,7 +8,6 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
-
     $(document).ready(function () {
 
       function limpa_formulário_cep() {
@@ -80,15 +79,19 @@
       });
 
       function calculaMaioridade(nasc) {
-        var hoje = new Date(), idade;
+        var hoje = new Date(),
+          idade;
 
         idade = (
-          (hoje.getMonth() > nasc.getMonth())
-          ||
+          (hoje.getMonth() > nasc.getMonth()) ||
           (hoje.getMonth() == nasc.getMonth() && hoje.getDate() >= nasc.getDate())
         ) ? hoje.getFullYear() - nasc.getFullYear() : hoje.getFullYear() - nasc.getFullYear() - 1;
 
-        if (idade > 18) {alert('valendo')}else{alert('não vale')};
+        if (idade > 18) {
+          alert('valendo')
+        } else {
+          alert('não vale')
+        };
       }
 
 
@@ -98,31 +101,30 @@
           if ($(this).val().trim().length == 0) {
             validado = false;
           }
-          if($('#senha').val().length < 8){
+          if ($('#senha').val().length < 8) {
             validado = false;
           }
-          
+
         });
-        if(!validado){
-          if($('#senha').val().length < 8){
+        if (!validado) {
+          if ($('#senha').val().length < 8) {
             $('legend').text('A SENHA DEVE POSSUIR MAIS DE 8 DIGITOS');
-          }else{
-          $('legend').text('POR FAVOR, PREENCHA OS CAMPOS ANTES DE CONTINUAR');
+          } else {
+            $('legend').text('POR FAVOR, PREENCHA OS CAMPOS ANTES DE CONTINUAR');
           }
-        }else{
+        } else {
           $('legend').text('cadastrado');
         }
         e.preventDefault(e);
       });
     });
-
-
   </script>
   <title>Formulário de Cadastro</title>
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/search_box.css">
   <link rel="stylesheet" href="../css/cadastro.css">
   <link rel="stylesheet" href="../css/index.css">
+  <script src="https://kit.fontawesome.com/9ddcac1e6c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -136,16 +138,13 @@
           <b class="logo_cor">U</b>
           <b class="logo_branco">p.</b>
           <b class="logo_cor">gg</b>
-          <div class="gearIcon">
-            <b class="gear_black">&#x2699;</b>
-            <b class="gear">&#x2699;</b>
-          </div>
+          <i class="fas fa-gear"></i>
         </div>
       </a>
 
       <div class="searchBox">
         <input class="search_input" type="search" placeholder="Busque seu jogo aqui">
-        <button class="search_button">&#x1f50d;&#xFE0E;</button>
+        <i class="fas fa-search search_button"></i>
       </div>
 
       <div class="navButtons">
@@ -160,8 +159,8 @@
       <input type="checkbox" name="" id="check">
 
       <label for="check">
-        <span class="bar botao">&#x2630;</span>
-        <span class="close botao">&#10006;</span>
+        <i class="fas fa-bars bar botao"></i>
+        <i class="fas fa-x close botao"></i>
       </label>
 
       <div class="smallMenu">

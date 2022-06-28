@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="../css/search_box.css">
   <link rel="stylesheet" href="../css/product_page.css">
   <link rel="stylesheet" href="../css/carrinho.css">
+  <script src="https://kit.fontawesome.com/9ddcac1e6c.js" crossorigin="anonymous"></script>
+  <script src="/script/carrinho.js" type="module" defer></script>
 
 </head>
 
@@ -24,16 +26,13 @@
           <b class="logo_cor">U</b>
           <b class="logo_branco">p.</b>
           <b class="logo_cor">gg</b>
-          <div class="gearIcon">
-            <b class="gear_black">&#x2699;</b>
-            <b class="gear">&#x2699;</b>
-          </div>
+          <i class="fas fa-gear"></i>
         </div>
       </a>
 
       <div class="searchBox">
         <input class="search_input" type="search" placeholder="Busque seu jogo aqui">
-        <button class="search_button">&#x1f50d;&#xFE0E;</button>
+        <i class="fas fa-search search_button"></i>
       </div>
 
       <div class="navButtons">
@@ -48,8 +47,8 @@
       <input type="checkbox" name="" id="check">
 
       <label for="check">
-        <span class="bar botao">&#x2630;</span>
-        <span class="close botao">&#10006;</span>
+        <i class="fas fa-bars bar botao"></i>
+        <i class="fas fa-x close botao"></i>
       </label>
 
       <div class="smallMenu">
@@ -75,60 +74,8 @@
           <tr>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div class="nome_icone">
-                <div class="icone"></div>
-                <div class="titulo">
-                  <div class="nome-item"></div>
-                  <div class="categoria-item">&#x1f50d;&#xFE0E;</div>
-                </div>
-              </div>
-            </td>
+        <tbody class="table-body">
 
-            <td>
-              <b> Quant:</b>
-              <div class="quantity-box">
-                <input type="number" name="quantity-input" id="quantity-input" value="1">
-              </div>
-            </td>
-
-            <td>
-              <b>1x</b>
-              <h2>R$ 499,5</h2>
-            </td>
-
-            <td>
-              <img src="../img/trash.png">
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="nome_icone">
-                <div class="icone"></div>
-                <div class="titulo">
-                  <div class="nome-item"></div>
-                  <div class="categoria-item">&#x1f50d;&#xFE0E;</div>
-                </div>
-              </div>
-            </td>
-
-
-            <td>
-              <b> Quant:</b>
-              <div class="quantity-box">
-                <input type="number" name="quantity-input" id="quantity-input" value="1">
-              </div>
-            </td>
-            <td>
-              <b>1x</b>
-              <h2>R$ 499,5</h2>
-            </td>
-            <td>
-              <img src="../img/trash.png">
-            </td>
-          </tr>
         </tbody>
 
       </table>
@@ -139,8 +86,8 @@
         <h2>Resumo</h2>
       </div>
       <div class="resumo-body">
-        <b>Subtotal R$ 999,00 </b>
-        <b>Total R$ 999,00</b>
+        <b>Total:</b>
+        <b class="total"></b>
       </div>
       <div class="resumo-footer">
         <button>Realizar Compra</button>

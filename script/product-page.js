@@ -1,18 +1,10 @@
+import Data from "./data.js";
+import Storage from "./storage.js";
+
 const tableDOM = document.querySelector(".table-body");
 
 let cart = [];
 
-class Data {
-  static async getProducts() {
-    try {
-      const result = await (await fetch("/data/products.json")).json();
-      const products = result.items;
-      return products;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-}
 class UI {
   static displayProducts(products) {
     let result = "";
@@ -24,7 +16,7 @@ class UI {
             <div class="icone"><img src=${product.itemImg} alt="item-icon"></div>
             <div class="titulo">
               <div class="nome-item">${product.itemNome}</div>
-              <div class="categoria-item">&#x1f50d;&#xFE0E; ${product.itemCategoria}</div>
+              <div class="categoria-item"><i class="fas fa-search"></i>${product.itemCategoria}</div>
             </div>
           </div>
         </td>
@@ -58,24 +50,38 @@ class UI {
     });
     tableDOM.innerHTML = result;
   }
+
   static displayProductAddedAlert() {
-    const alert = document.createElement("div");
-    alert.className = "alert";
-    alert.innerHTML = `
-      <div class="alert-container">
+    const createAlert = () => {
+      const alert = document.createElement("div");
+      alert.className = "alert";
+      alert.innerHTML = `
         <p>
           Item adicionado ao carrinho
         </p>
         <p class="closeAlert"> x </p>
-      </div>
     `;
-    document.body.appendChild(alert);
+      document.body.appendChild(alert);
+      Logic.btnFecharAlertLogic();
+    };
+
+    const existingAlert = document.querySelector(".alert");
+
+    if (existingAlert === null) {
+      createAlert();
+      return;
+    }
+
+    const body = document.body;
+    body.removeChild(existingAlert);
+    createAlert();
   }
 }
 
 class Logic {
   static btnComprarLogic() {
-    const buttons = [...document.querySelectorAll(".comprar")];
+    const buttons = document.querySelectorAll(".comprar");
+    cart = Storage.getCart();
     buttons.forEach((button) => {
       const id = button.dataset.id;
       button.addEventListener("click", (event) => {
@@ -85,28 +91,23 @@ class Logic {
         Storage.saveCart(cart);
         UI.displayProductAddedAlert();
       });
+      const inCart = cart.find((item) => item.id == id);
+      if (inCart) {
+        button.disabled = true;
+        return;
+      }
+      button.disabled = false;
     });
   }
-}
 
-class Storage {
-  static saveProducts(products) {
-    localStorage.setItem("products", JSON.stringify(products));
-  }
-
-  static getProduct(id) {
-    let products = JSON.parse(localStorage.getItem("products"));
-    return products.find((product) => product.id == id);
-  }
-
-  static saveCart(cart) {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }
-
-  static getCart() {
-    return localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [];
+  static btnFecharAlertLogic() {
+    const buttons = document.querySelectorAll(".closeAlert");
+    const body = document.body;
+    buttons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        body.removeChild(button.parentElement);
+      });
+    });
   }
 }
 
@@ -116,7 +117,9 @@ const init = () => {
       UI.displayProducts(products);
       Storage.saveProducts(products);
     })
-    .then(() => Logic.btnComprarLogic());
+    .then(() => {
+      Logic.btnComprarLogic();
+    });
 };
 
 init();

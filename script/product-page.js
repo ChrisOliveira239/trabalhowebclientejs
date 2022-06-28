@@ -1,5 +1,6 @@
 import Data from "./data.js";
 import Storage from "./storage.js";
+import createAlert from "./alert.js";
 
 const tableDOM = document.querySelector(".table-body");
 
@@ -52,29 +53,7 @@ class UI {
   }
 
   static displayProductAddedAlert() {
-    const createAlert = () => {
-      const alert = document.createElement("div");
-      alert.className = "alert";
-      alert.innerHTML = `
-        <p>
-          Item adicionado ao carrinho
-        </p>
-        <p class="closeAlert"> x </p>
-    `;
-      document.body.appendChild(alert);
-      Logic.btnFecharAlertLogic();
-    };
-
-    const existingAlert = document.querySelector(".alert");
-
-    if (existingAlert === null) {
-      createAlert();
-      return;
-    }
-
-    const body = document.body;
-    body.removeChild(existingAlert);
-    createAlert();
+    createAlert("Produto adicionado ao carrinho");
   }
 }
 
@@ -100,14 +79,37 @@ class Logic {
     });
   }
 
-  static btnFecharAlertLogic() {
-    const buttons = document.querySelectorAll(".closeAlert");
-    const body = document.body;
-    buttons.forEach((button) => {
-      button.addEventListener("click", (event) => {
-        body.removeChild(button.parentElement);
+  static sortProducts(value) {
+    const sortByPrice = (products) => {
+      products.sort((a, b) => {
+        if (a.itemPreco < b.itemPreco) return -1;
+        if (a.itemPreco > b.itemPreco) return 1;
+        return 0;
       });
+      return products;
+    };
+
+    const sortByName = (products) => {
+      products.sort((a, b) => {
+        if (a.itemNome < b.itemNome) return -1;
+        if (a.itemNome > b.itemNome) return 1;
+        return 0;
+      });
+      return products;
+    };
+
+    Data.getProducts().then((products) => {
+      if (value === "price") sortByPrice(products);
+      if (value === "name") sortByName(products);
+      UI.displayProducts(products);
     });
+  }
+
+  static sortOptionsLogic() {
+    const selectSort = document.querySelector(".select-sort");
+    selectSort.onchange = () => {
+      this.sortProducts(selectSort.value);
+    };
   }
 }
 
@@ -119,6 +121,7 @@ const init = () => {
     })
     .then(() => {
       Logic.btnComprarLogic();
+      Logic.sortOptionsLogic();
     });
 };
 

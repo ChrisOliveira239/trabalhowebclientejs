@@ -12,6 +12,15 @@ export default class Storage {
     localStorage.setItem("cart", JSON.stringify(cart));
   }
 
+  static saveDiscount() {
+    localStorage.setItem("discount", JSON.stringify(true));
+  }
+  static getDiscount() {
+    return localStorage.getItem("discount")
+      ? JSON.parse(localStorage.getItem("discount"))
+      : false;
+  }
+
   static getCart() {
     return localStorage.getItem("cart")
       ? JSON.parse(localStorage.getItem("cart"))

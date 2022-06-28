@@ -65,11 +65,56 @@ table tbody tr:nth-child(even) {
 .produtos-header {
   display: flex;
   justify-content: space-between;
+  padding-inline: 15px;
   align-items: center;
-  padding: 10px;
+  height: 55px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   background-color: var(--tertiary-color);
+}
+
+.produtos-footer {
+  background-color: var(--tertiary-color);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  padding-inline: 15px;
+  gap: 5px;
+}
+
+.produtos-footer label {
+  color: white;
+  font-weight: bold;
+}
+
+.produtos-footer {
+  width: 100%;
+}
+
+.produtos-footer input {
+  width: 50%;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.produtos-footer .validar-cupom {
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+}
+
+.produtos-footer .validar-cupom:hover {
+  color: var(--primary-color);
+  background-color: white;
 }
 
 .produtos-header button {
@@ -97,24 +142,32 @@ table tbody tr:nth-child(even) {
 
 .produto-info .produto-categoria {
   display: flex;
+  gap: 5px;
   font-size: 0.8rem;
   color: grey;
 }
 
-.quantity-box {
-  display: flex;
-  flex-direction: column;
-  color: white;
-}
 
-.quantity-box input {
+.quantity-box {
+  margin-right: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: white;
   background-color: var(--secondary-color);
   border: 1px solid var(--tertiary-color);
-  padding: 5px 0;
+  border-radius: 3px;
+  padding: 5px;
   width: 60px;
   outline: none;
   text-align: center;
+}
+
+.quantity-box .increase,
+.quantity-box .decrease {
+  cursor: pointer;
+  color: grey;
 }
 
 .excluirProduto {
@@ -126,8 +179,7 @@ table tbody tr:nth-child(even) {
 }
 
 .produtos-header button:hover {
-  background-color: white;
-  color: rgb(165, 35, 35);
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.5);
 }
 
 .resumo {
@@ -171,6 +223,19 @@ table tbody tr:nth-child(even) {
   background-color: #47d62d;
   color: black;
   text-transform: capitalize;
+}
+
+.resumo-footer button:hover {
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.5);
+}
+
+.remove-all,
+.finish-purchase {
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  color: white;
 }
 
 table td img {

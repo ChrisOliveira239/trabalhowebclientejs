@@ -96,56 +96,28 @@
       </div>
 
       <div class="tab-content">
-
         <div class="top">
-
-          <select name="server" id="select-server">
-            <option value="" disabled selected>Servidor</option>
-            <option value="NA">America do Norte</option>
-            <option value="SA">America do Sul</option>
-            <option value="EUW">Europa Leste</option>
-            <option value="EUN">Europa Oeste</option>
-            <option value="Asia">Asia</option>
-            <option value="OCE">Oceania</option>
+          <label for="orderBy">Ordenar</label>
+          <select name="orderBy" class="select-sort">
+            <option value="default" selected>Padrão</option>
+            <option value="price">Preço</option>
+            <option value="name">Nome</option>
           </select>
-
-          <select name="category" id="select-category">
-            <option value="" disabled selected>Categoria</option>
-            <option value="armor">Armadura</option>
-            <option value="consumable">Consumivel</option>
-            <option value="weapons">Armas</option>
-            <option value="material">Materias</option>
-            <option value="pets">Pets</option>
-            <option value="mounts">Montarias</option>
-            <option value="skins">Skins</option>
-            <option value="tools">Ferramentas</option>
-            <option value="other">Outros</option>
-          </select>
-
-          <button id="filtrar" type="button">Ir</button>
-
-          <div class="search-item">
-            <input type="text" placeholder="Busque seu item aqui">
-            <i class="fas fa-search"></i>
-          </div>
 
         </div>
 
         <div class="mid">
-          <div class="list">
-            <table class="tabela-produtos">
-              <thead>
-                <tr>
-                  <th><b>titulo</b></th>
-                  <th><b>avaliação</b></th>
-                  <th><b>entrega</b></th>
-                  <th><b>preco</b></th>
-                </tr>
-              </thead>
-              <tbody class="table-body"></tbody>
-            </table>
-          </div>
-
+          <table class="tabela-produtos">
+            <thead>
+              <tr>
+                <th><b>titulo</b></th>
+                <th><b>avaliação</b></th>
+                <th><b>entrega</b></th>
+                <th><b>preco</b></th>
+              </tr>
+            </thead>
+            <tbody class="table-body"></tbody>
+          </table>
         </div>
       </div>
 
